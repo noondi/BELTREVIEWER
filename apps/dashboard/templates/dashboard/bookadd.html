@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books Add Home</title>
+</head>
+<body>
+    <h2>Add a new book, Title and Review:</h2>
+    <form action="/dashboard/add" method="POST"> 
+        {% csrf_token %}
+        Book Title: <input type="text" name="book_title" value=""><br><br
+        <label for="author">Author:</label>
+        <select name='ahantu'>
+            <option selected value="Ernest">Ernest Hemingway</option>
+            <option value="Kris">Kris Dawriter</option>
+            <option value="Barbara">Barbara Streissand</option>
+            <option value="Tom">Tom  Clancy</option>
+            
+        </select> <br><br>
+        Or add a new author: <input type="text" name="book_title" value=""><br><br
+        <h4>Review:</h4><br>
+        <textarea name="review" id="" cols="30" rows="10"></textarea>
+        <br><br><br>
+        <p>Rating:</p> <input type="number"><br><br
+        <a href="/books/"><input type="submit" value="Add book and Review"></a>        
+    </form>    
+</body>
+</html>

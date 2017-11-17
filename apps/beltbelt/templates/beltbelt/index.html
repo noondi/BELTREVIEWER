@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+   
+    <h3>Register here</h3>
+        <form action="/register" method="POST">
+            {% csrf_token %}          
+            Name: <input type="text" name="first_name"><br>
+            Alias: <input type="text" name="last_name"><br>
+            Email: <input type="email" name="email"><br>
+            Password: <input type="text" name="password"><br>
+            Confirm PW: <input type="text" name="confpw"><br>
+            <input type="submit" value="Register">
+        </form>
+      
+    <h3>Login here</h3>        
+        <form action="/login" method="POST">
+            {% csrf_token %}
+            Email: <input type="text" name="email"><br>
+            Password: <input type="text" name="password"><br>
+            <input type="submit" value="Log In">
+        </form>   
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {%endfor%}
+     {% endif %}      
+    
+</body>
+</html>
